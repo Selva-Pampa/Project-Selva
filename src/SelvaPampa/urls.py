@@ -15,11 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-try:
-    from SelvaBack.views import *
-except:
-    from ..SelvaBack.views import base
-    
+from SelvaPampa.views import *
 urlpatterns = [
     path('',base),
     path('admin/', admin.site.urls)
