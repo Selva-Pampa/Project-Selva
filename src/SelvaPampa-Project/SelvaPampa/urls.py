@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 try:
-    from SelvaBack.views import base
+    from SelvaBack.views.base import base
 except:
-    from ..SelvaBack.views import *
+    from ..SelvaBack.views import base
 urlpatterns = [
     path('',base),
     path('admin/', admin.site.urls)
