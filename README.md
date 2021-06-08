@@ -23,9 +23,9 @@ Ya dentro de la shell de pip y con todo instalado, podemos proceder a abrir el s
 
 # Guia para plasmar cambios en el dominio:
 
-1. Abrir una pipenv shell en la carpeta _/src_
-2. Ejecutar el comando _py manage.py makemigrations SelvaPampa_
-3. Si todo salio bien, Ejecutar _py manage.py migrate SelvaPampa_
+1. Abrir una pipenv shell en la carpeta _/src_.
+2. Ejecutar el comando _py manage.py makemigrations SelvaPampa_.
+3. Si todo salio bien, Ejecutar _py manage.py migrate SelvaPampa_.
 
 Si no hubo algun error en la migracion, deberia haber plasmado todos los cambios a la base de datos que este seleccionada en el archivo de configuracion seleccionado. 
 
