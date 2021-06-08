@@ -4,15 +4,16 @@
 
 1. Clonar este repositorio en una carpeta local.
 2. Abrir una cmd.
-3. Moverse a la carpeta del proyecto(_cd C:.../src_)
-4. Ejecutar el comando **_pipenv install_**
-5. Ejecutar el comando _pipenv shell_ 
+3. Ejecutar el comando _pip install pipenv_.
+4. Moverse a la carpeta del proyecto(_cd C:.../src_).
+5. Ejecutar el comando **_pipenv install_**.
+6. Ejecutar el comando _pipenv shell_.
 
 Ya dentro de la shell de pip y con todo instalado, podemos proceder a abrir el server ejecutando el comando: _py manage.py runserver_
 
 # Guia para correr el proyecto en Vs-Code:
 
-1. Abrir el proyecto con vscode, en la carpeta base(Project-Selva)
+1. Abrir el proyecto con vscode, en la carpeta base(Project-Selva).
 2. Ir a la pestaña del debugger, o apretar ctrl + shift + D.
 3. Deberia haber una opcion que permitar crear el archivo lauch.json.
 4. Seleccionar dicha opcion, seleccionar proyecto python django.
