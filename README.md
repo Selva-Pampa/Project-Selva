@@ -10,6 +10,15 @@
 
 Ya dentro de la shell de pip y con todo instalado, podemos proceder a abrir el server ejecutando el comando: _py manage.py runserver_
 
+# Guia para correr el proyecto en Vs-Code:
+
+1. Abrir el proyecto con vscode, en la carpeta base(Project-Selva)
+2. Ir a la pestaña del debugger, o apretar ctrl + shift + D.
+3. Deberia haber una opcion que permitar crear el archivo lauch.json.
+4. Seleccionar dicha opcion, seleccionar proyecto python django.
+5. Cuando pregunte la carpeta donde esta el manage.py, poner ${workspaceFolder}\\src\\manage.py.
+6. Apretar enter, y deberia crear el archivo con la configuracion correcta.
+7. Para correrlo seleccionar la opcion en el debugger y apretar run.
 
 # Guia para plasmar cambios en el dominio:
 
