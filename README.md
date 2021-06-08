@@ -11,7 +11,7 @@
 Ya dentro de la shell de pip y con todo instalado, podemos proceder a abrir el server ejecutando el comando: _py manage.py runserver_
 
 
-# Guia para plasmar cambios en el dominio
+# Guia para plasmar cambios en el dominio:
 
 1. Abrir una pipenv shell en la carpeta _/src_
 2. Ejecutar el comando _py manage.py makemigrations SelvaPampa_
