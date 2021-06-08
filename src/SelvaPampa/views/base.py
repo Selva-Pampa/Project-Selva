@@ -4,6 +4,6 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-
 def base(request: HttpRequest):
-    return HttpResponse("Holaaa")
+    if request.method == 'GET':
+        return HttpResponse("<h1>Holaaaa</h1>")
