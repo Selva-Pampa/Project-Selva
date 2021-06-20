@@ -1,12 +1,15 @@
-from django.views import View
 from django.http import HttpRequest, JsonResponse, HttpResponse
 from rest_framework.parsers import JSONParser
+from rest_framework.views import APIView
 
-from ..models import Item
+try:
+    from ..models import Item
+except:
+    from .models import Item
 from ..serializers import ItemSerializer
 
 
-class ItemViews(View):
+class ItemViews(APIView):
     """
         Esta clase permite agrupar todas las vistas
         especificas de un item.
@@ -38,7 +41,7 @@ class ItemViews(View):
         return HttpResponse(status=204)
 
 
-class ItemListViews(View):
+class ItemListViews(APIView):
 
     def get(self, request: HttpRequest):
         items = Item.objects.all()
