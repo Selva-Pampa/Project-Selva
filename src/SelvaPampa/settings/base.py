@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'SelvaPampa.apps.SelvaPampaConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
         'USER': 'ExampleDBUser',
         'PASSWORD': 'ExampleDBUserpassword',
-        'HOST': '',                     
+        'HOST': '',
         'PORT': '',
     }
 }

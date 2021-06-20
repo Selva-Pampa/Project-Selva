@@ -1,10 +1,11 @@
 from django.contrib import admin
 from django.urls import path
-from SelvaPampa.views.base import *
+from .views.base import item_list, users, login, item_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('items/',all_items),
-    path('users/',users),
-    path('authenticate/',login)
+    path('api/items/', item_list),
+    path('api/items/<int:id>/', item_detail),
+    path('api/users/', users),
+    path('api/authenticate/', login)
 ]
