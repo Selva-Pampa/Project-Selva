@@ -1,11 +1,10 @@
 from django.http import HttpRequest, JsonResponse, HttpResponse
-from rest_framework.parsers import JSONParser
-from rest_framework.views import APIView
+from rest_framework.decorators import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
-try:
-    from ..models import Item
-except:
-    from .models import Item
+
+from ..models import Item
 from ..serializers import ItemSerializer
 
 
@@ -16,7 +15,7 @@ class ItemViews(APIView):
     """
     item = None
 
-    def dispatch(self, request: HttpRequest, *args, **kwargs):
+    def dispatch(self, request, *args, **kwargs):
         try:
             self.item = Item.objects.get(id=kwargs.get('id'))
         except Item.DoesNotExist:
@@ -26,15 +25,14 @@ class ItemViews(APIView):
 
     def get(self, request, id):
         serializer = ItemSerializer(self.item)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
 
     def put(self, request, id):
-        data = JSONParser().parse(request)
-        serializer = ItemSerializer(self.item, data=data)
+        serializer = ItemSerializer(self.item, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, id):
         self.item.delete()
@@ -46,12 +44,11 @@ class ItemListViews(APIView):
     def get(self, request: HttpRequest):
         items = Item.objects.all()
         serializer = ItemSerializer(items, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
 
     def post(self, request: HttpRequest):
-        data = JSONParser().parse(request)
-        serializer = ItemSerializer(data=data)
+        serializer = ItemSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
