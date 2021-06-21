@@ -2,7 +2,7 @@ from django.http import HttpRequest, JsonResponse, HttpResponse
 from rest_framework.decorators import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+from rest_framework import permissions
 
 from ..models import Item
 from ..serializers import ItemSerializer
@@ -14,6 +14,7 @@ class ItemViews(APIView):
         especificas de un item.
     """
     item = None
+    permission_classes = [permissions.IsAuthenticated]
 
     def dispatch(self, request, *args, **kwargs):
         try:
@@ -40,6 +41,7 @@ class ItemViews(APIView):
 
 
 class ItemListViews(APIView):
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request: HttpRequest):
         items = Item.objects.all()

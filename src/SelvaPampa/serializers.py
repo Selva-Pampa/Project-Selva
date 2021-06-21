@@ -19,3 +19,9 @@ class SubstratumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Substratum
         fields = '__all__'
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'designs']
