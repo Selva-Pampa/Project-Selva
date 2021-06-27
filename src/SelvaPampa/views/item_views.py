@@ -41,6 +41,9 @@ class ItemViews(APIView):
 
 
 class ItemListViews(APIView):
+    """Esta clase permite agrupar las vistas de TODOS los items
+        en una sola.
+    """
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request: HttpRequest):

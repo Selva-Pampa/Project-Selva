@@ -6,7 +6,7 @@ class Design(models.Model):
     author = models.ForeignKey(
         User, related_name='designs', on_delete=models.CASCADE)
     picture = models.TextField()  # Url de la foto
-    title = models.CharField(max_length=15)
+    title = models.CharField(max_length=20)
     description = models.CharField(max_length=50, default=None)
 
     color = models.CharField(max_length=20)
