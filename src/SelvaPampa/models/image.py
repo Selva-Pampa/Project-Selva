@@ -1,6 +1,6 @@
 from django.db import models
 
-from . import Item
+from .item import Item
 
 
 class Image(models.Model):

@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from rest_framework.utils import field_mapping
-from .models import *
+
+from .models.item import *
+from .models.design import *
+from .models.substratum import *
 
 
 class ItemSerializer(serializers.ModelSerializer):

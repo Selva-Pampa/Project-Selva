@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import ItemListViews, ItemViews, UserList, UserDetail
+from .views.item_views import *
+from .views.user_views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
